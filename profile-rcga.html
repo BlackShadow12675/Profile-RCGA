@@ -24,10 +24,12 @@
 
         .card{
             width: 400px;
-            height: 650px;
+            height: 700px;
             background: rgb(0, 0, 0);
             border-radius: 15px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
 
@@ -53,7 +55,7 @@
             width: 126px;
             height: 126px;
             border-radius: 50%;
-            background: rgb(1, 3, 77);
+            background: rgb(17,8,63);
             z-index: 1;
         }
         
@@ -95,8 +97,9 @@
         
         .information-profile{
             width: 100%;
-            height: calc(100% - 315px); /* Resta la altura de #forest-picture */
-            background: r/* e */d;
+            /* height: calc(100% - 315px); */
+            flex-grow: 1;
+            /* background: red; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -104,7 +107,7 @@
         }
 
         .container-names{
-            height: 115px;
+            height: 135px;
             width: 300px;
             /* background: #833ab4; */
             display: flex;
@@ -112,20 +115,20 @@
             justify-content: center;
             flex-direction: column;
             position: absolute;
-            top: 5px;
+            top: -30px;
         }
 
         .nombre-profile1, .nombre-profile2, .nombre-profile3,.nombre-profile4{
             /* background: #c13584; */
             color: rgb(0, 0, 0);
             width: 51%;
-            padding: 0px 0px 0px 140px;
-            margin: 2.2px;
+            padding: 3px 0px 3px 140px;
+            margin: 0px;
             font-size: 20px;
             font-family: sans-serif, monospace ;
             font-weight: bold;
             align-items: start;
-            transition: 0.8s ease-in-out;
+            transition: 0.6s ease-in-out;
         }
 
         .nombre-profile1 span, .nombre-profile2 span, 
@@ -136,7 +139,7 @@
         }
         .nombre-profile1:hover span,.nombre-profile2:hover span, 
         .nombre-profile3:hover span,.nombre-profile4:hover span{
-            animation: moveAndScale 0.56s ease-in-out forwards;
+            animation: moveAndScale 0.4s ease-in-out forwards;
             padding-right: 0;
         }
 
@@ -154,7 +157,7 @@
         .nombre-profile1:hover, .nombre-profile2:hover,
         .nombre-profile3:hover, .nombre-profile4:hover{
             color: rgb(255, 255, 255);
-            animation: moveAndScale2 0.5s ease-in-out forwards;
+            animation: moveAndScale2 0.4s ease-in-out forwards;
         }
         @keyframes moveAndScale2 {
             0% {
@@ -162,9 +165,11 @@
             }
             50% {
                 transform: translateX(-15px) scale(1);
+                text-shadow: 1px 1px 10px rgba(86, 86, 86, 0.5);
             }
             100% {
                 transform: translateX(-15px) scale(1.2);
+                text-shadow: 1px 1px 10px rgba(148, 148, 148, 0.5);
             }
         }
 
@@ -181,65 +186,95 @@
             color: rgb(200,225,99);
         }
         
-        .nombre-profile::after {
-            display: block;
-            content: "";
-            width: 150%; /* Ajusta este valor para cambiar el ancho de la línea */
-            height: 2.2px;
-            background: #FF0000;
-            position: absolute;
-            left: -25%; /* Ajusta este valor para centrar la línea */
-        }
+
+
+        /* Cargo del perfil */
         .Cargo-profile{
-            color: azure;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background: #0f7714; */
+            height: 40px;
+            color: rgb(239, 239, 239);
             position: absolute;
-            top: 30%;
+            bottom: 53%;
             font-size: 18px;
-            /* font-style: oblique; */
+            font-weight: 750;
+            font-family: Arial, Helvetica, sans-serif;
         }
+        .Cargo-profile::after {
+            content: "";
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            bottom: 5px; /* Ajusta este valor para mover la línea hacia arriba o hacia abajo */
+            height: 1.6px; /* Ajusta este valor para cambiar el grosor de la línea */
+            background-color: #888888; /* Ajusta este valor para cambiar el color de la línea */
+        }
+        
+        
 
 
-        /* Barra de informacion */
-        .container-info{
-            display: flex;
-            /* background: red; */
+        /* Text descripcion de la tarjeta */
+        .text-description{
+            /* background: #5851db; */
             width: 100%;
-            height: 15%;
-            margin-top: 150px;
+            height: 85px;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            text-align:center;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 25%;
+            color: #fefff2;
+            font-size: 12px;
+            font-style: oblique;
+            font-weight: 100;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .text-description p{
+            margin: 10px;
+            padding: 0px;
+        }
+        .text-description p:hover{
+            text-shadow: 2px 2px 50px rgb(150, 150, 150), -2px -2px 50px rgb(161, 161, 161);
         }
 
-        .ciudad{
-            color: azure;
-            display: flex;
-            width: 50%;
-            font-size: 15px;
-            /* background: blue; */
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-        .ciudad img {
-            margin-right: 13px; /* Ajusta este valor para cambiar el espacio */
-        }
-        .ciudad:hover, .email:hover{
-            transform: scale(1.02);
-            transition: transform 0.2s ease;
-            box-shadow: 0px 2px 8px 0 rgb(255, 229, 187);
-        }
 
-        .email{
-            color: azure;
+        /*text suscribete y sigueme*/
+        .text-footcard{
             display: flex;
-            width: 50%;
-            font-size: 15px;
-            /* background: pink; */
             align-items: center;
             justify-content: center;
-            transition: 0.3s;
+            /* background: red; */
+            color: #fefff2;
+            font-size: 15px;
+            font-weight: 4400;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 150px;
+            height: 20px;
+            position: absolute;
+            bottom: 16%;
+            transition: 0.8s ease-in-out;
         }
-        .email img {
-            margin-right: 13px; /* Ajusta este valor para cambiar el espacio */
+        /* .text-footcard:hover{
+            animation: moveAndScale3 0.8s ease-in-out forwards;
         }
+        @keyframes moveAndScale3 {
+            0% {
+                transform: translateX(0) scale(1);
+            }
+            25% {
+                transform: translateX(-50px) scale(1.09);
+            }
+            50% {
+                transform: translateX(50px) scale(1.18);
+            }
+            100% {
+                transform: translateX(0px) scale(1.2);
+            }
+        } */
 
 
         /* Barra de redes sociales */
@@ -247,7 +282,7 @@
             display: flex;
             /* background: blue; */
             width: 100%;
-            height: 8%;
+            height: 12%;
             position: absolute;
             bottom: 0;
             
@@ -273,9 +308,9 @@
             border-radius: 5% 5% 0 0;
         }
         .instagram:hover, .tiktok:hover, .youtube:hover{
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-            box-shadow: 0px 2px 8px 0 rgb(0, 0, 2);
+            transform: scale(1.04);
+            transition: transform 0.2s ease;
+            box-shadow: 0px -2px 13px -3px rgb(86, 86, 86);
         }
 
         .tiktok{
@@ -312,21 +347,21 @@
                     <p class="nombre-profile3"><span>G</span>onzalez</p>
                     <p class="nombre-profile4"><span>A</span>valos</p>
                 </div>
-                <!-- <p class="Cargo-profile">Creador de contenido</p> -->
+                
+                <div class="Cargo-profile">
+                    <p>Creador de contenido</p>
+                </div>
+                
+                <div class="text-description">
+                    <p>HEY! aqui nos enfocamos a ver mas alla de lo que se ve a primera vista!</p>
+                    <p>Aqui si hablamos sobre la Dirrecion!, la estructura del guion! edicion, y simbolismo!</p>
+                    <p>Sobre las peliculas mas de moda! o Joyas olvidadas del pasado...</p>     
+                </div>
 
-                <div class="container-info">
-
-                    <div class="ciudad">
-                        
-                        <p> Zapopan, Jal</p>
-                        <a href="https://maps.app.goo.gl/KHfJ2trGREEQEXqN7" target="_blank">.</a>
-                    </div>
-
-                    <div class="email">
-                        <a href=""></a>
-                        <p>email</p>
-                    </div>
-
+                <div class="text-footcard">
+                    <p>
+                        Sígueme y suscríbete.
+                    </p>
                 </div>
 
                 <div class="social-networks">
